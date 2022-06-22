@@ -330,7 +330,6 @@ function Celula({ perfilUser, lideranca, rolMembros }) {
                     borderRadius={16}
                     mt={4}
                   >
-                    {console.log('nomeliderCelula', nomeLiderCelula)}
                     <TabMembros
                       setBuscarNome={setBuscarNome}
                       membroCelula={membroCelula}

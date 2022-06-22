@@ -404,7 +404,6 @@ function PlanMembro({ perfilUser, lideranca }) {
           </Box>
         ) : (
           <Box>
-            {console.log(dadosRelVisita)}
             {dadosRelVisita && dadosRelVisita.Necessidades ? (
               <MostrarRelatorioGeral
                 dadosRelVisita={dadosRelVisita}

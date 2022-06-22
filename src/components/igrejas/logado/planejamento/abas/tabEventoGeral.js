@@ -43,7 +43,7 @@ export default function TabCelula({
         const listaEveSuper = sem1.filter(
           (val) => val.Funcao === perfilUser.Funcao,
         );
-        console.log('listaEveSuper', listaEveSuper);
+
         if (listaEveSuper && listaEveSuper.length) {
           const listaEventosSetor = listaEveSuper.sort((a, b) => {
             if (new Date(a.Data) > new Date(b.Data)) return 1;

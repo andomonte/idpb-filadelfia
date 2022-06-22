@@ -40,7 +40,6 @@ export default function TabCelula({
     setRelEncontrado([]);
 
     if (sem1) {
-      console.log(sem1, numeroCoord);
       setRel(sem1);
       if (sem1 && sem1[0]) {
         const listaRelSuper = sem1.filter(

@@ -69,8 +69,6 @@ export default function TabCelula({
   // const dados = nomesCelulas.map((row) => createData(row.Nome, true));
   const classes = useStyles();
 
-  console.log('ll', lideranca);
-
   const nomesCel = lideranca.filter(
     (val) =>
       val.supervisao === Number(perfilUser.supervisao) &&

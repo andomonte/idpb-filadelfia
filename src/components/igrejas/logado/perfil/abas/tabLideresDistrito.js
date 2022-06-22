@@ -42,7 +42,7 @@ export default function TabCelula({
       return 0;
     });
   }
-  console.log(lideresSetor);
+
   return (
     <Paper
       sx={{

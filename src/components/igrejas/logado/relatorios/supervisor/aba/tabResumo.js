@@ -534,9 +534,8 @@ export default function TabCelula({
             <Box color="#ffff8d" mr={2}>
               Célula:
             </Box>
-            {console.log('aqui1')}
+
             <Box color="#ffffff"> {dadosCelula.Celula} </Box>
-            {console.log('aqui2')}
           </Box>
 
           <Box

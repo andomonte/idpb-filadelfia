@@ -85,7 +85,7 @@ function meuPerfil({ secao, perfilUser }) {
                   display="flex"
                   width="100%"
                   height="74vh"
-                  sx={{ minHeight: 410 }}
+                  sx={{ minHeight: 400 }}
                   justifyContent="center"
                   alignItems="center"
                 >

@@ -29,7 +29,6 @@ function Fucao({ perfilUser, lideranca, rolMembros }) {
     (itens) => itens[tipoPesquisado[contNumeroFucao]],
   );
   const celulaCoord = [...new Set(numberCelulas)];
-  console.log(celulaCoord);
 
   const handleIncFucao = () => {
     let contFuncaoAtual = contNumeroFucao + 1;

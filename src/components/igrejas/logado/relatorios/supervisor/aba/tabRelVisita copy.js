@@ -49,7 +49,7 @@ export default function TabCelula({
             if (new Date(b.Data) > new Date(a.Data)) return -1;
             return 0;
           });
-          console.log('lminhas', listaMinhaVisitas);
+
           if (listaMinhaVisitas.length) setRelEncontrado(listaMinhaVisitas);
         }
       }
