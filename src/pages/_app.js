@@ -31,6 +31,19 @@ export default function MyApp(props) {
           name="viewport"
           content="minimum-scale=1, initial-scale=1, width=device-width, shrink-to-fit=no, user-scalable=no, viewport-fit=cover"
         />
+
+        <link rel="preconnect" href="https://fonts.googleapis.com" />
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin />
+        <link
+          href="https://fonts.googleapis.com/css?family=Orbitron&family=Roboto+Slab&family=Rubik&display=swap"
+          rel="stylesheet"
+        />
+
+        <link
+          rel="stylesheet"
+          type="text/css"
+          href="http://fonts.googleapis.com/css?family=Rubik"
+        />
         <link rel="icon" href="/images/idpb.ico" type="image/x-icon" />
       </Head>
       <Provider session={pageProps.session}>

@@ -1,8 +1,8 @@
 import { Box } from '@material-ui/core';
 import React from 'react';
 import corIgreja from 'src/utils/coresIgreja';
-
-import SvgIcon from '@mui/material/SvgIcon';
+import '@fontsource/roboto-mono'; // Padrões para peso 400.
+import '@fontsource/rubik';
 import IconButton from '@mui/material/IconButton';
 import { BiCaretLeft, BiCaretRight } from 'react-icons/bi';
 import TabLideresDistrito from './abas/tabLideresDistrito';
@@ -43,185 +43,190 @@ function Fucao({ perfilUser, lideranca, rolMembros }) {
     setContNumeroFucao(contFuncaoAtual);
   };
   return (
-    <Box width="100%" height="90vh" minHeight={500} minWidth={300}>
+    <Box
+      height="90vh"
+      minHeight={500}
+      minWidth={300}
+      width="100vw"
+      bgcolor={corIgreja.principal2}
+    >
       {!openBuscar ? (
         <Box
           height="100%"
-          width="100vw"
+          width="100%"
           minWidth={300}
           mt={0}
           display="flex"
           justifyContent="center"
           alignItems="center"
         >
-          <Box
-            minWidth={300}
-            height="100%"
-            width="100%"
-            border="4px solid #fff"
-          >
+          <Box minWidth={300} maxWidth={500} height="94%" width="92%">
             <Box width="100%" height="100%">
               <Box
-                style={{
-                  borderRadius: '16px',
-                }}
+                borderRadius={16}
                 height="100%"
                 display="flex"
                 justifyContent="center"
                 alignItems="center"
-                minHeight={350}
+                flexDirection="column"
+                minHeight={500}
                 minWidth={300}
                 width="100%"
                 bgcolor={corIgreja.principal}
-                borderTop="2px solid #fff"
               >
                 <Box
                   display="flex"
                   justifyContent="center"
                   alignItems="center"
                   flexDirection="column"
-                  mt={1}
-                  mb={1}
-                  width="95%"
-                  height="100%"
+                  mt={0}
+                  mb={2}
+                  width="100%"
+                  height="20%"
                 >
-                  <Box justifyContent="center" width="100%" display="flex">
+                  <Box
+                    flexDirection="column"
+                    justifyContent="center"
+                    width="100%"
+                    display="flex"
+                  >
                     <Box
-                      mb={2}
-                      bgcolor="#fff"
-                      height={35}
-                      justifyContent="center"
-                      width="100%"
+                      mt="3vh"
                       display="flex"
-                      borderRadius={10}
+                      justifyContent="center"
+                      alignItems="center"
                     >
-                      <Box ml={-1.8} width="100%" display="flex">
-                        <Box
-                          width="20%"
-                          display="flex"
-                          justifyContent="center"
-                          alignItems="center"
-                        >
-                          <IconButton
-                            color="primary"
-                            aria-label="upload picture"
-                            component="span"
-                            onClick={() => {
-                              handleDecFucao();
-                            }}
-                          >
-                            <SvgIcon sx={{ color: corIgreja.iconeOn }} />{' '}
-                            <BiCaretLeft />
-                          </IconButton>
-                        </Box>
-                        <Box
-                          width="100%"
-                          ml={2}
-                          display="flex"
-                          justifyContent="center"
-                          alignItems="center"
-                          fontSize="14px"
-                          sx={{ fontFamily: 'arial black' }}
-                        >
-                          {numeroFuncoes[contNumeroFucao]}
-                        </Box>
-                        <Box
-                          width="20%"
-                          display="flex"
-                          justifyContent="flex-end"
-                          alignItems="center"
-                        >
-                          <IconButton
-                            color="primary"
-                            aria-label="upload picture"
-                            component="span"
-                            onClick={() => {
-                              handleIncFucao();
-                            }}
-                          >
-                            <SvgIcon sx={{ color: corIgreja.iconeOn }} />
-                            <BiCaretRight />
-                          </IconButton>
-                        </Box>
-                      </Box>
+                      <img
+                        width="40%"
+                        src="images/filadelfia/filadelfia2.png"
+                        alt="logo"
+                      />
                     </Box>
-                  </Box>
-                  <Box justifyContent="center" width="100%" display="flex">
                     <Box
-                      mb={2}
-                      bgcolor="#fff"
-                      height={35}
+                      mt={2}
+                      width="100%"
                       justifyContent="center"
-                      width="48%"
                       display="flex"
-                      borderRadius={10}
                     >
                       <Box
-                        color="black"
+                        color="white"
                         display="flex"
                         justifyContent="center"
                         alignItems="center"
-                        borderRadius={10}
-                        width="100%"
-                        height={30}
                         ml={1}
-                        mt={0.3}
-                        fontSize="12px"
+                        fontSize="14px"
+                        fontFamily="Rubik"
                       >
-                        Total de {tipoLiderados[contNumeroFucao]}:{' '}
+                        {tipoLiderados[contNumeroFucao]}:{' '}
                         <Box
-                          fontFamily="arial black"
+                          fontFamily="Roboto Mono"
                           fontSize="14px"
-                          color="blue"
+                          fontWeight="bold"
+                          color="white"
                           mt={0}
                           ml={1}
                         >
                           {celulaCoord.length}
                         </Box>
                       </Box>
-                    </Box>
-                    <Box
-                      bgcolor="white"
-                      color="black"
-                      display="flex"
-                      justifyContent="center"
-                      alignItems="center"
-                      borderRadius={10}
-                      width="50%"
-                      height={35}
-                      ml={1}
-                      mt={0}
-                      fontSize="12px"
-                    >
-                      Total de Membros:{' '}
                       <Box
-                        fontSize="14px"
-                        fontFamily="arial black"
-                        color="blue"
+                        color="white"
+                        display="flex"
+                        justifyContent="center"
+                        alignItems="center"
+                        ml={5}
                         mt={0}
-                        ml={1}
+                        fontSize="14px"
                       >
-                        {membrosDistrito.length}
+                        Membros:{' '}
+                        <Box
+                          fontSize="14px"
+                          fontWeight="bold"
+                          fontFamily="Roboto Mono"
+                          color="white"
+                          mt={0}
+                          ml={1}
+                        >
+                          {membrosDistrito.length}
+                        </Box>
                       </Box>
                     </Box>
                   </Box>
-
+                </Box>
+                <Box justifyContent="center" width="100%" display="flex">
                   <Box
-                    height="75%"
-                    minHeight={315}
-                    display="flex"
-                    bgcolor="#fafafa"
+                    bgcolor="#fff"
+                    justifyContent="center"
                     width="100%"
-                    borderRadius={16}
+                    display="flex"
                   >
-                    <TabLideresDistrito
-                      setBuscarNome={setBuscarNome}
-                      perfilUser={perfilUser}
-                      lideranca={lideranca}
-                      setOpenBuscar={setOpenBuscar}
-                      Funcao={numeroFuncoes[contNumeroFucao]}
-                    />
+                    <Box ml={0} width="100%" display="flex">
+                      <Box
+                        width="10%"
+                        display="flex"
+                        justifyContent="center"
+                        alignItems="center"
+                      >
+                        <IconButton
+                          color="primary"
+                          aria-label="upload picture"
+                          component="span"
+                          onClick={() => {
+                            handleDecFucao();
+                          }}
+                        >
+                          <BiCaretLeft size={30} color={corIgreja.principal} />
+                        </IconButton>
+                      </Box>
+                      <Box
+                        width="100%"
+                        ml={0}
+                        display="flex"
+                        justifyContent="center"
+                        alignItems="center"
+                        fontSize="14px"
+                        sx={{ fontFamily: 'arial black' }}
+                      >
+                        {numeroFuncoes[contNumeroFucao]}
+                      </Box>
+                      <Box
+                        width="10%"
+                        display="flex"
+                        justifyContent="flex-end"
+                        alignItems="center"
+                      >
+                        <IconButton
+                          color="primary"
+                          aria-label="upload picture"
+                          component="span"
+                          onClick={() => {
+                            handleIncFucao();
+                          }}
+                        >
+                          <BiCaretRight size={30} color={corIgreja.principal} />
+                        </IconButton>
+                      </Box>
+                    </Box>
                   </Box>
+                </Box>
+                <Box
+                  height="75%"
+                  minHeight={315}
+                  display="flex"
+                  bgcolor="#fafafa"
+                  width="100%"
+                  sx={{
+                    borderBottomLeftRadius: 16,
+                    borderBottomRightRadius: 16,
+                  }}
+                >
+                  <TabLideresDistrito
+                    setBuscarNome={setBuscarNome}
+                    perfilUser={perfilUser}
+                    lideranca={lideranca}
+                    setOpenBuscar={setOpenBuscar}
+                    Funcao={numeroFuncoes[contNumeroFucao]}
+                  />
                 </Box>
               </Box>
             </Box>

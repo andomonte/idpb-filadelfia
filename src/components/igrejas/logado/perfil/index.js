@@ -88,6 +88,7 @@ const useStyles = makeStyles((theme) => ({
     height: 35,
   },
   contentMain: {
+    background: corIgreja.principal2,
     flex: '1 1 auto',
     height: '100%',
     overflow: 'auto',

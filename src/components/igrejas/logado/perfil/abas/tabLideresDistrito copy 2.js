@@ -8,7 +8,6 @@ import Avatar from '@material-ui/core/Avatar';
 export default function TabCelula({
   lideranca,
   Funcao,
-  rolMembros,
   perfilUser,
   setBuscarNome,
   setOpenBuscar,
@@ -24,8 +23,8 @@ export default function TabCelula({
 
   if (Funcao === 'Lider') {
     lideresSetor = listaParcial.sort((a, b) => {
-      if (a.Nome > b.Nome) return 1;
-      if (b.Nome > a.Nome) return -1;
+      if (new Date(a.Celula) > new Date(b.Celula)) return 1;
+      if (new Date(b.Celula) > new Date(a.Celula)) return -1;
       return 0;
     });
   }
@@ -51,8 +50,7 @@ export default function TabCelula({
         background: '#fff9',
         width: '100%',
         height: '100%',
-        borderBottomLeftRadius: 16,
-        borderBottomRightRadius: 16,
+        borderRadius: 5,
         overflow: 'hidden',
       }}
     >
@@ -65,47 +63,49 @@ export default function TabCelula({
               display="flex"
               alignItems="center"
               key={row.id}
-              height={60}
+              height={40}
+              sx={{ borderBottom: '1px solid #00a' }}
             >
               <Box display="flex" width="100%">
-                <Box ml={1} display="flex" alignItems="center">
-                  <Avatar
-                    onClick={() => console.log('vai mostrar a foto')}
-                    alt="User"
-                    src=""
-                    style={{
-                      width: 35,
-                      height: 35,
-                    }}
-                  />
+                <Box width="100%" display="flex" alignItems="center" ml={1}>
+                  {Funcao === 'Lider' && (
+                    <Box>
+                      {row.Celula} -{' '}
+                      {row.Nome.length > 30
+                        ? row.Nome.substring(0, row.Nome.lastIndexOf(' '))
+                        : row.Nome}
+                    </Box>
+                  )}
+                  {Funcao === 'Supervisor' && (
+                    <Box>
+                      {' '}
+                      {row.supervisao} -{' '}
+                      {row.Nome.length > 30
+                        ? row.Nome.substring(0, row.Nome.lastIndexOf(' '))
+                        : row.Nome}
+                    </Box>
+                  )}
+                  {Funcao === 'Coordenador' && (
+                    <Box>
+                      {' '}
+                      {row.Coordenacao} -{' '}
+                      {row.Nome.length > 30
+                        ? row.Nome.substring(0, row.Nome.lastIndexOf(' '))
+                        : row.Nome}
+                    </Box>
+                  )}
                 </Box>
                 <Box
                   onClick={() => {
                     setBuscarNome(lideresSetor[index]);
                     setOpenBuscar(true);
                   }}
-                  width="100%"
+                  width="10%"
                   display="flex"
                   alignItems="center"
                   ml={1}
-                  mt={1}
                 >
-                  <Box>
-                    <Box fontFamily="Fugaz One" fontSize="13px">
-                      {row.Nome.length > 30
-                        ? row.Nome.substring(0, row.Nome.lastIndexOf(' '))
-                        : row.Nome}
-                    </Box>
-
-                    <Box display="flex" fontFamily="Rubik" fontSize="12px">
-                      <Box ml={0.5}>Coordenação: </Box>
-                      <Box ml={1}> {row.Coordenacao}</Box>
-                      <Box ml={2}>Super.: </Box>
-                      <Box ml={1}> {row.supervisao}</Box>
-                      <Box ml={2}>Célula: </Box>
-                      <Box ml={1}> {row.Celula}</Box>
-                    </Box>
-                  </Box>
+                  <MdScreenSearchDesktop size={25} color="green" />
                 </Box>
               </Box>
             </Box>

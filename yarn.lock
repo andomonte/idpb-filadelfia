@@ -1278,6 +1278,16 @@
     "minimatch" "^3.0.4"
     "strip-json-comments" "^3.1.1"
 
+"@fontsource/orbitron@^4.5.8":
+  "integrity" "sha512-En4xVwdVf3g3Rf6fuCWCdgIG9X6k1lW8rb5dZmgYv2WVwWofc14eoaRF551uOoHaWBsxHaF7o5mqY5EmnJaKbA=="
+  "resolved" "https://registry.npmjs.org/@fontsource/orbitron/-/orbitron-4.5.8.tgz"
+  "version" "4.5.8"
+
+"@fontsource/roboto-mono@^4.5.7":
+  "integrity" "sha512-1uBjM95BEz7zJlmmnpNAM5afMvIxx0wqr86eA76vRqZw8OF5wmsRqYfF3caHuVarBH9/AGN7t9h+3UXK8fjq/Q=="
+  "resolved" "https://registry.npmjs.org/@fontsource/roboto-mono/-/roboto-mono-4.5.7.tgz"
+  "version" "4.5.7"
+
 "@fontsource/rubik@^4.5.10":
   "integrity" "sha512-VQuuko0lAKgI6p9lylpeJ/xcG/FpQqUYgPC+NUwVGvYvZNSQYT20UT13MKjPk2bPuxSuSHeeOyZ9x/6eRy4pfQ=="
   "resolved" "https://registry.npmjs.org/@fontsource/rubik/-/rubik-4.5.10.tgz"
@@ -2355,9 +2365,9 @@
   "version" "1.0.0"
 
 "caniuse-lite@^1.0.30001283", "caniuse-lite@^1.0.30001286":
-  "integrity" "sha512-jnT4Tq0Q4ma+6nncYQVe7d73kmDmE9C3OGTx3MvW7lBM/eY1S1DZTMBON7dqV481RhNiS5OxD7k9JQvmDOTirw=="
-  "resolved" "https://registry.npmjs.org/caniuse-lite/-/caniuse-lite-1.0.30001292.tgz"
-  "version" "1.0.30001292"
+  "integrity" "sha512-yy7XLWCubDobokgzudpkKux8e0UOOnLHE6mlNJBzT3lZJz6s5atSEzjoL+fsCPkI0G8MP5uVdDx1ur/fXEWkZA=="
+  "resolved" "https://registry.npmjs.org/caniuse-lite/-/caniuse-lite-1.0.30001366.tgz"
+  "version" "1.0.30001366"
 
 "canvg@^3.0.6":
   "integrity" "sha512-rDXcnRPuz4QHoCilMeoTxql+fvGqNAxp+qV/KHD8rOiJSAfVjFclbdUNHD2Uqfthr+VMg17bD2bVuk6F07oLGw=="
