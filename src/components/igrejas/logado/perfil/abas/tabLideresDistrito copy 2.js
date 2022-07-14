@@ -4,6 +4,7 @@ import TableContainer from '@mui/material/TableContainer';
 import Box from '@material-ui/core/Box';
 import { MdScreenSearchDesktop } from 'react-icons/md';
 import Avatar from '@material-ui/core/Avatar';
+import corIgreja from 'src/utils/coresIgreja';
 
 export default function TabCelula({
   lideranca,

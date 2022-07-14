@@ -155,7 +155,10 @@ function Fucao({ perfilUser, lideranca, rolMembros }) {
                 </Box>
                 <Box justifyContent="center" width="100%" display="flex">
                   <Box
-                    bgcolor="#fff"
+                    bgcolor={corIgreja.principal2}
+                    border="2px solid "
+                    borderColor="white"
+                    color="#f0f0f0"
                     justifyContent="center"
                     width="100%"
                     display="flex"
@@ -175,7 +178,7 @@ function Fucao({ perfilUser, lideranca, rolMembros }) {
                             handleDecFucao();
                           }}
                         >
-                          <BiCaretLeft size={30} color={corIgreja.principal} />
+                          <BiCaretLeft size={30} color="#f0f0f0" />
                         </IconButton>
                       </Box>
                       <Box
@@ -203,7 +206,7 @@ function Fucao({ perfilUser, lideranca, rolMembros }) {
                             handleIncFucao();
                           }}
                         >
-                          <BiCaretRight size={30} color={corIgreja.principal} />
+                          <BiCaretRight size={30} color="#f0f0f0" />
                         </IconButton>
                       </Box>
                     </Box>
