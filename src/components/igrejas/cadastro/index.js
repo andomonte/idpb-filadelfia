@@ -204,6 +204,7 @@ function Cadastro({ lideranca, rolMembros }) {
               Nome: items.Nome,
               RolMembro: items.RolMembro,
               supervisao: items.supervisao,
+              foto: items.foto,
             };
           if (items.Funcao === 'Presidente')
             return {
@@ -220,6 +221,7 @@ function Cadastro({ lideranca, rolMembros }) {
               Nome: items.Nome,
               RolMembro: items.RolMembro,
               supervisao: items.supervisao,
+              foto: items.foto,
             };
           if (items.Funcao === 'PastorDistrito')
             return {
@@ -236,6 +238,7 @@ function Cadastro({ lideranca, rolMembros }) {
               Nome: items.Nome,
               RolMembro: items.RolMembro,
               supervisao: items.supervisao,
+              foto: items.foto,
             };
 
           if (items.Funcao === 'Coordenador')
@@ -253,6 +256,7 @@ function Cadastro({ lideranca, rolMembros }) {
               Nome: items.Nome,
               RolMembro: items.RolMembro,
               supervisao: items.supervisao,
+              foto: items.foto,
             };
           if (items.Funcao === 'Supervisor')
             return {
@@ -269,6 +273,7 @@ function Cadastro({ lideranca, rolMembros }) {
               Nome: items.Nome,
               RolMembro: items.RolMembro,
               supervisao: items.supervisao,
+              foto: items.foto,
             };
 
           if (items.Funcao === 'Lider')
@@ -286,6 +291,7 @@ function Cadastro({ lideranca, rolMembros }) {
               Nome: items.Nome,
               RolMembro: items.RolMembro,
               supervisao: items.supervisao,
+              foto: items.foto,
             };
 
           return 0;
@@ -308,6 +314,7 @@ function Cadastro({ lideranca, rolMembros }) {
           id: secao.length + 1,
           supervisao: membro[0].Supervisao,
           numero: membro[0].Celula,
+          foto: membro[0].foto,
         };
       }
 

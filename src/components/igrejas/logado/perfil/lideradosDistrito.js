@@ -42,6 +42,7 @@ function Fucao({ perfilUser, lideranca, rolMembros }) {
     if (contFuncaoAtual < 0) contFuncaoAtual = numeroFuncoes.length - 1;
     setContNumeroFucao(contFuncaoAtual);
   };
+
   return (
     <Box
       height="90vh"
@@ -80,35 +81,26 @@ function Fucao({ perfilUser, lideranca, rolMembros }) {
                   alignItems="center"
                   flexDirection="column"
                   mt={0}
-                  mb={2}
+                  mb={0}
                   width="100%"
-                  height="20%"
+                  height="8%"
                 >
                   <Box
+                    height="100%"
                     flexDirection="column"
                     justifyContent="center"
                     width="100%"
                     display="flex"
                   >
                     <Box
-                      mt="3vh"
-                      display="flex"
-                      justifyContent="center"
-                      alignItems="center"
-                    >
-                      <img
-                        width="40%"
-                        src="images/filadelfia/filadelfia2.png"
-                        alt="logo"
-                      />
-                    </Box>
-                    <Box
-                      mt={2}
+                      mt={0}
+                      height="100%"
                       width="100%"
                       justifyContent="center"
                       display="flex"
                     >
                       <Box
+                        height="100%"
                         color="white"
                         display="flex"
                         justifyContent="center"
@@ -155,13 +147,15 @@ function Fucao({ perfilUser, lideranca, rolMembros }) {
                 </Box>
                 <Box justifyContent="center" width="100%" display="flex">
                   <Box
-                    bgcolor="#f0f0f0"
-                    border="2px solid "
+                    bgcolor={corIgreja.principal}
+                    borderTop="1px"
+                    style={{ borderTop: '1px solid #f0f0f0' }}
                     borderColor="white"
                     color="#000"
                     justifyContent="center"
                     width="100%"
                     display="flex"
+                    height={50}
                   >
                     <Box ml={0} width="100%" display="flex">
                       <Box
@@ -178,17 +172,18 @@ function Fucao({ perfilUser, lideranca, rolMembros }) {
                             handleDecFucao();
                           }}
                         >
-                          <BiCaretLeft size={30} color="#000" />
+                          <BiCaretLeft size={30} color="#f0f0f0" />
                         </IconButton>
                       </Box>
                       <Box
                         width="100%"
                         ml={0}
+                        color="#f0f0f0"
                         display="flex"
                         justifyContent="center"
                         alignItems="center"
-                        fontSize="14px"
-                        sx={{ fontFamily: 'arial black' }}
+                        fontSize="16px"
+                        sx={{ fontFamily: 'Fugaz One' }}
                       >
                         {numeroFuncoes[contNumeroFucao]}
                       </Box>
@@ -206,14 +201,14 @@ function Fucao({ perfilUser, lideranca, rolMembros }) {
                             handleIncFucao();
                           }}
                         >
-                          <BiCaretRight size={30} color="#000" />
+                          <BiCaretRight size={30} color="#f0f0f0" />
                         </IconButton>
                       </Box>
                     </Box>
                   </Box>
                 </Box>
                 <Box
-                  height="75%"
+                  height="85%"
                   minHeight={315}
                   display="flex"
                   bgcolor="#fafafa"

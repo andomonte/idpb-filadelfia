@@ -16,7 +16,7 @@ const s3 = new aws.S3({
 const upload = multer({
   storage: multerS3({
     s3,
-    bucket: process.env.AWSBUCKET,
+    bucket: 'arquivofiladelfia',
     acl: 'public-read',
     contentType: multerS3.AUTO_CONTENT_TYPE,
     metadata(req, file, cb) {

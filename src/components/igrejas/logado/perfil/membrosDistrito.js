@@ -1,41 +1,12 @@
-import { Box, Grid, Paper } from '@material-ui/core';
+import { Box } from '@material-ui/core';
 import React from 'react';
 import corIgreja from 'src/utils/coresIgreja';
-import { makeStyles } from '@material-ui/core/styles';
 import IconButton from '@mui/material/IconButton';
 import { BiCaretLeft, BiCaretRight } from 'react-icons/bi';
 import BuscarNome from '../relatorios/supervisor/buscarNome';
 import TabMembros from './abas/tabMembros';
 
-const useStyles = makeStyles((theme) => ({
-  root: {
-    flexGrow: 1,
-    justifyContent: 'center',
-  },
-  paper: {
-    padding: theme.spacing(1),
-    textAlign: 'center',
-    color: theme.palette.text.secondary,
-  },
-  button1: {
-    display: 'flex',
-    background: 'red',
-    '&:hover': {
-      backgroundColor: 'red',
-    },
-    borderRadius: 30,
-    fontSize: '14px',
-    width: 'auto',
-    minWidth: 100,
-    fontWeight: 'bold',
-    color: '#fff',
-    justifyContent: 'center',
-  },
-}));
-
 function Celula({ perfilUser, lideranca, rolMembros }) {
-  const classes = useStyles();
-
   const [buscarNome, setBuscarNome] = React.useState([]);
   const [openBuscar, setOpenBuscar] = React.useState(false);
   const [contNumeroCelula, setContNumeroCelula] = React.useState(0);
@@ -72,6 +43,10 @@ function Celula({ perfilUser, lideranca, rolMembros }) {
   );
 
   const celulasParcial = lideresSetor.map((itens) => itens.Celula);
+
+  const membrosCoordParcial = rolMembros.filter(
+    (itens) => itens.Coordenacao === Number(numeroCoord[contNumeroCoord]),
+  );
   const numeroCelulasP = [...new Set(celulasParcial)];
 
   const celulasOrdenadas = numeroCelulasP.sort((a, b) => {
@@ -81,7 +56,6 @@ function Celula({ perfilUser, lideranca, rolMembros }) {
   });
 
   const numeroCelulas = celulasOrdenadas;
-
   const membroCelula = rolMembros.filter(
     (val) =>
       Number(val.Distrito) === Number(perfilUser.Distrito) &&
@@ -119,223 +93,206 @@ function Celula({ perfilUser, lideranca, rolMembros }) {
     setContNumeroCelula(0);
   };
 
-  const nomeLiderCelula = lideranca.filter(
-    (val) =>
-      Number(val.Distrito) === Number(perfilUser.Distrito) &&
-      Number(val.Coordenacao) === Number(numeroCoord[contNumeroCoord]) &&
-      val.Funcao === 'Lider' &&
-      val.Celula === Number(numeroCelulas[contNumeroCelula]),
-  );
-
   //= ===================================================================
 
   return (
-    <Box height="90vh" minHeight={500} minWidth={300}>
+    <Box
+      height="90vh"
+      minHeight={500}
+      minWidth={300}
+      width="100vw"
+      bgcolor={corIgreja.principal2}
+    >
       {!openBuscar ? (
         <Box
           height="100%"
-          width="100vw"
+          width="100%"
           minWidth={300}
           mt={0}
           display="flex"
           justifyContent="center"
           alignItems="center"
         >
-          <Box
-            minWidth={300}
-            height="100%"
-            width="100vw"
-            maxWidth={600}
-            border="4px solid #fff"
-          >
-            <Box height="100%">
+          <Box minWidth={300} maxWidth={500} height="94%" width="92%">
+            <Box width="100%" height="100%">
               <Box
-                style={{
-                  borderRadius: '16px',
-                }}
+                borderRadius={16}
                 height="100%"
                 display="flex"
                 justifyContent="center"
                 alignItems="center"
-                minHeight={350}
+                flexDirection="column"
+                minHeight={500}
                 minWidth={300}
                 width="100%"
                 bgcolor={corIgreja.principal}
-                borderTop="2px solid #fff"
               >
-                <Box width="95%" height="100%">
+                <Box
+                  display="flex"
+                  justifyContent="center"
+                  alignItems="center"
+                  flexDirection="column"
+                  mt={0}
+                  mb={0}
+                  width="100%"
+                  height="8%"
+                >
                   <Box
-                    height="10%"
-                    mt={1}
-                    minHeight={50}
-                    display="flex"
-                    alignItems="center"
-                    justifyContent="center"
-                    sx={{
-                      bgcolor: corIgreja.principal,
-                      color: '#F1F1F1',
-                      fontFamily: 'Geneva',
-                      fontWeight: 'bold',
-                      fontSize: '20px',
-                    }}
-                  >
-                    <Grid item container xs={12} spacing={2}>
-                      <Grid item xs={4}>
-                        <Box mt={2} ml={1} fontSize="12px">
-                          Coordenação
-                        </Box>
-                        <Paper width="100%" className={classes.paper}>
-                          <Box
-                            height={30}
-                            justifyContent="flex-start"
-                            display="flex"
-                          >
-                            <Box width="100%" display="flex">
-                              <Box
-                                display="flex"
-                                justifyContent="flex-start"
-                                alignItems="center"
-                                height="100%"
-                                width="100%"
-                              >
-                                <IconButton
-                                  color="primary"
-                                  aria-label="upload picture"
-                                  component="span"
-                                  onClick={() => {
-                                    handleDecCoord();
-                                  }}
-                                >
-                                  <BiCaretLeft color="blue" />
-                                </IconButton>
-                              </Box>
-                              <Box
-                                width="100%"
-                                display="flex"
-                                justifyContent="center"
-                                alignItems="center"
-                                fontSize="18px"
-                                sx={{ fontFamily: 'arial black' }}
-                              >
-                                {numeroCoord[contNumeroCoord]}
-                              </Box>
-                              <Box
-                                width="100%"
-                                display="flex"
-                                justifyContent="flex-end"
-                                alignItems="center"
-                              >
-                                <IconButton
-                                  color="primary"
-                                  aria-label="upload picture"
-                                  component="span"
-                                  onClick={() => {
-                                    handleIncCoord();
-                                  }}
-                                >
-                                  <BiCaretRight />
-                                </IconButton>
-                              </Box>
-                            </Box>
-                          </Box>
-                        </Paper>
-                      </Grid>
-                      <Grid item xs={5}>
-                        <Box mt={2} ml={1} fontSize="12px">
-                          Célula
-                        </Box>
-                        <Paper width="100%" className={classes.paper}>
-                          <Box
-                            height={30}
-                            justifyContent="flex-start"
-                            display="flex"
-                          >
-                            <Box width="100%" display="flex">
-                              <Box
-                                display="flex"
-                                justifyContent="flex-start"
-                                alignItems="center"
-                                height="100%"
-                                width="100%"
-                              >
-                                <IconButton
-                                  color="primary"
-                                  aria-label="upload picture"
-                                  component="span"
-                                  onClick={() => {
-                                    handleDecCelula();
-                                  }}
-                                >
-                                  <BiCaretLeft color="blue" />
-                                </IconButton>
-                              </Box>
-                              <Box
-                                width="100%"
-                                display="flex"
-                                justifyContent="center"
-                                alignItems="center"
-                                fontSize="18px"
-                                sx={{ fontFamily: 'arial black' }}
-                              >
-                                {numeroCelulas[contNumeroCelula]}
-                              </Box>
-                              <Box
-                                width="100%"
-                                display="flex"
-                                justifyContent="flex-end"
-                                alignItems="center"
-                              >
-                                <IconButton
-                                  color="primary"
-                                  aria-label="upload picture"
-                                  component="span"
-                                  onClick={() => {
-                                    handleIncCelula();
-                                  }}
-                                >
-                                  <BiCaretRight />
-                                </IconButton>
-                              </Box>
-                            </Box>
-                          </Box>
-                        </Paper>
-                      </Grid>
-
-                      <Grid item xs={3}>
-                        <Box mt={2} ml={1} fontSize="12px">
-                          Membros
-                        </Box>
-                        <Paper width="100%" className={classes.paper}>
-                          <Box
-                            height={30}
-                            alignItems="center"
-                            justifyContent="center"
-                            fontSize="18px"
-                            sx={{ fontFamily: 'arial black' }}
-                            width="100%"
-                            display="flex"
-                          >
-                            {membroCelula.length}
-                          </Box>
-                        </Paper>
-                      </Grid>
-                    </Grid>
-                  </Box>
-                  <Box
-                    height="80%"
-                    minHeight={305}
-                    display="flex"
-                    bgcolor="#fafafa"
-                    width="100%"
+                    bgcolor={corIgreja.principal}
                     borderRadius={16}
-                    mt={4}
+                    color="#000"
+                    justifyContent="center"
+                    width="100%"
+                    display="flex"
+                    height={50}
                   >
-                    <TabMembros
-                      setBuscarNome={setBuscarNome}
-                      membroCelula={membroCelula}
-                      setOpenBuscar={setOpenBuscar}
-                    />
+                    <Box ml={0} width="100%" display="flex">
+                      <Box
+                        width="10%"
+                        display="flex"
+                        justifyContent="center"
+                        alignItems="center"
+                      >
+                        <IconButton
+                          color="primary"
+                          aria-label="upload picture"
+                          component="span"
+                          onClick={() => {
+                            handleDecCoord();
+                          }}
+                        >
+                          <BiCaretLeft size={30} color="#f0f0f0" />
+                        </IconButton>
+                      </Box>
+                      <Box
+                        width="100%"
+                        ml={0}
+                        color="#f0f0f0"
+                        display="flex"
+                        justifyContent="center"
+                        alignItems="center"
+                        fontSize="16px"
+                        sx={{ fontFamily: 'Rubik' }}
+                      >
+                        Coordenação:
+                        <Box fontFamily="arial black" ml={2} mr={2}>
+                          {numeroCoord[contNumeroCoord]}
+                        </Box>
+                      </Box>
+                      <Box
+                        width="10%"
+                        display="flex"
+                        justifyContent="flex-end"
+                        alignItems="center"
+                      >
+                        <IconButton
+                          color="primary"
+                          aria-label="upload picture"
+                          component="span"
+                          onClick={() => {
+                            handleIncCoord();
+                          }}
+                        >
+                          <BiCaretRight size={30} color="#f0f0f0" />
+                        </IconButton>
+                      </Box>
+                    </Box>
                   </Box>
+                </Box>
+                <Box justifyContent="center" width="100%" display="flex">
+                  <Box
+                    bgcolor={corIgreja.principal}
+                    style={{ borderTop: '1px solid #f0f0f0' }}
+                    borderColor="white"
+                    color="#000"
+                    justifyContent="center"
+                    width="100%"
+                    display="flex"
+                    height={50}
+                  >
+                    <Box ml={0} width="100%" display="flex">
+                      <Box
+                        width="10%"
+                        display="flex"
+                        justifyContent="center"
+                        alignItems="center"
+                      >
+                        <IconButton
+                          color="primary"
+                          aria-label="upload picture"
+                          component="span"
+                          onClick={() => {
+                            handleDecCelula();
+                          }}
+                        >
+                          <BiCaretLeft size={30} color="#f0f0f0" />
+                        </IconButton>
+                      </Box>
+                      <Box
+                        width="100%"
+                        ml={0}
+                        color="#f0f0f0"
+                        display="flex"
+                        justifyContent="center"
+                        alignItems="center"
+                        fontSize="16px"
+                        sx={{ fontFamily: 'Rubik' }}
+                      >
+                        Célula:
+                        <Box fontFamily="arial black" ml={2} mr={2}>
+                          {numeroCelulas[contNumeroCelula]}
+                        </Box>
+                        (
+                        <Box ml={0.5} color="yellow" fontSize="12px">
+                          Membros:
+                        </Box>
+                        <Box
+                          color="yellow"
+                          fontSize="12px"
+                          fontFamily="arial black"
+                          ml={1}
+                          mr={0.5}
+                        >
+                          {membroCelula.length} / {membrosCoordParcial.length}
+                        </Box>
+                        )
+                      </Box>
+                      <Box
+                        width="10%"
+                        display="flex"
+                        justifyContent="flex-end"
+                        alignItems="center"
+                      >
+                        <IconButton
+                          color="primary"
+                          aria-label="upload picture"
+                          component="span"
+                          onClick={() => {
+                            handleIncCelula();
+                          }}
+                        >
+                          <BiCaretRight size={30} color="#f0f0f0" />
+                        </IconButton>
+                      </Box>
+                    </Box>
+                  </Box>
+                </Box>
+                <Box
+                  height="85%"
+                  minHeight={315}
+                  display="flex"
+                  bgcolor="#fafafa"
+                  width="100%"
+                  sx={{
+                    borderBottomLeftRadius: 16,
+                    borderBottomRightRadius: 16,
+                  }}
+                >
+                  <TabMembros
+                    setBuscarNome={setBuscarNome}
+                    membroCelula={membroCelula}
+                    setOpenBuscar={setOpenBuscar}
+                  />
                 </Box>
               </Box>
             </Box>

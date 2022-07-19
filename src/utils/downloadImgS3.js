@@ -9,7 +9,7 @@ import { Sha256 } from '@aws-crypto/sha256-browser';
 // const randomBytes = promisify(crypto.randomBytes);
 
 const region = process.env.AWSREGION;
-const bucketName = 'sistemaidpb';
+const bucketName = process.env.AWSBUCKET;
 const accessKeyId = process.env.AWSACCESS_KEY;
 const secretAccessKey = process.env.AWSSECRET_KEY;
 

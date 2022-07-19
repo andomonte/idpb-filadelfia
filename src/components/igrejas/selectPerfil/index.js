@@ -112,6 +112,7 @@ function SelectPerfil({ lideranca, rolMembros, celulas, userIgrejas }) {
             Nome: items.Nome,
             RolMembro: items.RolMembro,
             supervisao: items.supervisao,
+            foto: items.foto,
           };
         if (items.Funcao === 'Presidente')
           return {
@@ -128,6 +129,7 @@ function SelectPerfil({ lideranca, rolMembros, celulas, userIgrejas }) {
             Nome: items.Nome,
             RolMembro: items.RolMembro,
             supervisao: items.supervisao,
+            foto: items.foto,
           };
         if (items.Funcao === 'PastorDistrito')
           return {
@@ -144,6 +146,7 @@ function SelectPerfil({ lideranca, rolMembros, celulas, userIgrejas }) {
             Nome: items.Nome,
             RolMembro: items.RolMembro,
             supervisao: items.supervisao,
+            foto: items.foto,
           };
 
         if (items.Funcao === 'Coordenador')
@@ -161,6 +164,7 @@ function SelectPerfil({ lideranca, rolMembros, celulas, userIgrejas }) {
             Nome: items.Nome,
             RolMembro: items.RolMembro,
             supervisao: items.supervisao,
+            foto: items.foto,
           };
         if (items.Funcao === 'Supervisor')
           return {
@@ -177,6 +181,7 @@ function SelectPerfil({ lideranca, rolMembros, celulas, userIgrejas }) {
             Nome: items.Nome,
             RolMembro: items.RolMembro,
             supervisao: items.supervisao,
+            foto: items.foto,
           };
 
         if (items.Funcao === 'Lider')
@@ -194,6 +199,7 @@ function SelectPerfil({ lideranca, rolMembros, celulas, userIgrejas }) {
             Nome: items.Nome,
             RolMembro: items.RolMembro,
             supervisao: items.supervisao,
+            foto: items.foto,
           };
 
         return 0;
@@ -216,6 +222,7 @@ function SelectPerfil({ lideranca, rolMembros, celulas, userIgrejas }) {
         id: secao.length + 1,
         supervisao: membro[0].Supervisao,
         numero: membro[0].Celula,
+        foto: membro[0].foto,
       };
     }
 

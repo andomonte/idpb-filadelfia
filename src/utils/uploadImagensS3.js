@@ -1,6 +1,6 @@
 import aws from 'aws-sdk';
 
-const bucketName = 'sistemaidpb';
+const bucketName = process.env.AWSBUCKET;
 
 aws.config.update({
   secretAccessKey: process.env.AWSSECRET_KEY,

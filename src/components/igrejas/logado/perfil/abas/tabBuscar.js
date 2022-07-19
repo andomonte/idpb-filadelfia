@@ -128,7 +128,7 @@ export default function TabCelula({ Mes, Ano, perfilUser }) {
         );
 
         setDataSem1(presCelula1[0].Data);
-        const pSem1 = nomes[0].filter(
+        const pSem1 = nomes.filter(
           (val) => val.Rol === Number(perfilUser.RolMembro),
         );
         setPresSem1(pSem1);
@@ -317,15 +317,17 @@ export default function TabCelula({ Mes, Ano, perfilUser }) {
           val.Semana === Number(semana) &&
           val.Distrito === Number(perfilUser.Distrito),
       );
+
       if (presDiscipulado1.length) {
         const nomes = Object.keys(presDiscipulado1).map((i) =>
           JSON.parse(presDiscipulado1[Number(i)].NomesMembros),
         );
-
-        const pSemDiscipulado = nomes[0].filter(
-          (val) => val.Rol === Number(perfilUser.RolMembro),
-        );
-        setDiscSem1(pSemDiscipulado);
+        if (nomes[0]) {
+          const pSemDiscipulado = nomes.filter(
+            (val) => val.Rol === Number(perfilUser.RolMembro),
+          );
+          setDiscSem1(pSemDiscipulado);
+        }
       }
       // seman 2
       const presDiscipulado2 = semDiscipulado.filter(
@@ -339,7 +341,7 @@ export default function TabCelula({ Mes, Ano, perfilUser }) {
           JSON.parse(presDiscipulado2[Number(i)].NomesMembros),
         );
 
-        const pSemDiscipulado = nomes[0].filter(
+        const pSemDiscipulado = nomes.filter(
           (val) => val.Rol === Number(perfilUser.RolMembro),
         );
         setDiscSem2(pSemDiscipulado);
@@ -357,7 +359,7 @@ export default function TabCelula({ Mes, Ano, perfilUser }) {
           JSON.parse(presDiscipulado3[Number(i)].NomesMembros),
         );
 
-        const pSemDiscipulado = nomes[0].filter(
+        const pSemDiscipulado = nomes.filter(
           (val) => val.Rol === Number(perfilUser.RolMembro),
         );
         setDiscSem3(pSemDiscipulado);
@@ -375,7 +377,7 @@ export default function TabCelula({ Mes, Ano, perfilUser }) {
           JSON.parse(presDiscipulado4[Number(i)].NomesMembros),
         );
 
-        const pSemDiscipulado = nomes[0].filter(
+        const pSemDiscipulado = nomes.filter(
           (val) => val.Rol === Number(perfilUser.RolMembro),
         );
         setDiscSem4(pSemDiscipulado);
@@ -393,7 +395,7 @@ export default function TabCelula({ Mes, Ano, perfilUser }) {
           JSON.parse(presDiscipulado5[Number(i)].NomesMembros),
         );
 
-        const pSemDiscipulado = nomes[0].filter(
+        const pSemDiscipulado = nomes.filter(
           (val) => val.Rol === Number(perfilUser.RolMembro),
         );
         setDiscSem5(pSemDiscipulado);
