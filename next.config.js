@@ -19,9 +19,8 @@ const nextConfig = {
     domains: [
       'localhost',
       'arquivofiladelfia.s3.amazonaws.com',
-      'sistemaidpb.s3.amazonaws.com',
       'idpb-app.vercel.app',
-      'sistemaidpb.com.br',
+      'idpbfiladelfia.com.br',
     ],
   },
 };

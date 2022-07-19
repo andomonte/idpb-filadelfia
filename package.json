@@ -84,7 +84,7 @@
     "next-compose-plugins": "^2.2.1",
     "next-connect": "^0.9.1",
     "next-images": "^1.8.1",
-    "next-pwa": "^2.1.0",
+    "next-pwa": "^5.5.4",
     "next-share": "^0.12.1",
     "node-fetch": "^2.6.1",
     "print-js": "^1.6.0",
@@ -96,7 +96,7 @@
     "react-chartjs-2": "^2.11.2",
     "react-circular-progressbar": "^2.0.4",
     "react-credit-cards": "^0.8.3",
-    "react-dom": "17.0.1",
+    "react-dom": "^17.0.1",
     "react-dropzone": "^11.3.2",
     "react-easy-crop": "^4.4.0",
     "react-final-form": "^6.5.8",
@@ -129,7 +129,8 @@
     "unfetch": "^4.2.0",
     "util": "^0.12.4",
     "validate-date": "^2.0.0",
-    "validator": "^13.7.0"
+    "validator": "^13.7.0",
+    "watchpack": "^1.7.5"
   },
   "devDependencies": {
     "eslint": "^8.20.0",
