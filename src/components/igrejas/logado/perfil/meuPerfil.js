@@ -183,7 +183,7 @@ function meuPerfil({ secao, perfilUser }) {
                       alignItems="center"
                     >
                       <img
-                        width={180}
+                        width={181}
                         src="images/filadelfia/filadelfia2.png"
                         alt="logo"
                       />
