@@ -26,8 +26,6 @@ import { usePWAInstall } from 'react-use-pwa-install';
 // import HomeIcon from '@material-ui/icons/Home';
 import { IoMdPerson } from 'react-icons/io';
 // import { MdOutlineScreenSearchDesktop } from 'react-icons/md';
-import IconFiladelfia from 'src/components/icones/filadelfia';
-import { MdOutlineScreenSearchDesktop } from 'react-icons/md';
 
 const useStyles = makeStyles((theme) => ({
   mobileDrawer: {
@@ -71,13 +69,13 @@ function HomeIcon2() {
     </SvgIcon>
   );
 }
-function CursoIcon() {
+/* function SecretariaIcon() {
   return (
     <SvgIcon style={{ color: '#ffb74d' }}>
       <MdOutlineScreenSearchDesktop />
     </SvgIcon>
   );
-}
+} */
 function NiverIcon() {
   return (
     <SvgIcon style={{ color: '#76ff03' }}>
@@ -106,43 +104,22 @@ function Upload() {
     </SvgIcon>
   );
 }
-
-function RelatorioIcones() {
+function ParticipacoesIcones() {
   return <IconeRelatorio cor="#ffe0b2" />;
 }
 function iconeInstall() {
   return <IconeInstalar size={25} color="white" />;
 }
-function iconeCursos() {
-  return (
-    <SvgIcon style={{ color: 'black' }}>
-      <SchoolIcon />
-    </SvgIcon>
-  );
-}
 const primaryMenu = [
   {
     id: 1,
     label: 'Home',
-    path: '/logado',
+    path: '/logado/',
     icon: HomeIcon2,
   },
+
   {
     id: 2,
-    label: 'Cursos',
-    path: '/cursos',
-    icon: iconeCursos,
-  },
-  {
-    id: 3,
-    label: 'Secretaria',
-    path: '/secretaria',
-    icon: CursoIcon,
-  },
-
-  { id: 4, label: 'Quem Somos', path: '/quemSomos', icon: IconFiladelfia },
-  {
-    id: 5,
     label: 'Meu Perfil',
     path: '/meuPerfil',
     icon: LogoPerfil,
@@ -154,40 +131,48 @@ const secondaryManu = [
     id: 1,
     label: 'Participações',
     path: '/membro/participacoes',
-    icon: RelatorioIcones,
+    icon: ParticipacoesIcones,
   },
   {
     id: 2,
+    label: 'Planejamento',
+    path: '/planejamento',
+    icon: Panejamento,
+  },
+
+  {
+    id: 3,
     label: 'Atualizar',
     path: '/atualizar',
     icon: Upload, // iconeAtualizarDados,
   },
   {
-    id: 3,
-    label: 'Planejamento',
-    path: '/planejamento',
-    icon: Panejamento,
-  },
-  {
     id: 4,
+    label: 'Ensino',
+    path: '/cursos',
+    icon: SchoolIcon,
+  },
+
+  {
+    id: 5,
     label: 'Aniversariantes',
     path: '/aniversariantes',
     icon: NiverIcon,
   },
   {
-    id: 5,
+    id: 6,
     label: 'Midia IDPB',
     path: '/midia',
     icon: midiaPlay,
   },
   {
-    id: 6,
+    id: 7,
     label: 'Mudar Usuário',
     path: '/selectPerfil',
     icon: change,
   },
   {
-    id: 7,
+    id: 8,
     label: 'Instalar App',
     icon: iconeInstall,
     path: '/installApp',

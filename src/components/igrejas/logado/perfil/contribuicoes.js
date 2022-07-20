@@ -154,7 +154,7 @@ function RelCelula({ perfilUser }) {
         justifyContent="center"
         alignItems="center"
       >
-        <Box height="100%" width="100vw" minWidth={300} border="4px solid #fff">
+        <Box height="94%" width="92vw" minWidth={300}>
           <Box height="100%">
             <Box
               height="20%"
