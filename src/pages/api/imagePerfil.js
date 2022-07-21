@@ -10,8 +10,26 @@ export default async function handle(req, res) {
   // const Image = fs.readFileSync(dados.fileImage);
 
   try {
-    const result = await prisma.membros
+    await prisma.membros
       .update({
+        where: { RolMembro: Number(dados.RolMembro) },
+        data: {
+          foto,
+        },
+      })
+      .finally(async () => {
+        await prisma.$disconnect();
+      });
+
+    //    res.send(result);
+  } catch (errors) {
+    console.log('erros', errors);
+    res.status(400).send('vou criar o banco');
+  }
+
+  try {
+    const result = await prisma.lideranca
+      .updateMany({
         where: { RolMembro: Number(dados.RolMembro) },
         data: {
           foto,

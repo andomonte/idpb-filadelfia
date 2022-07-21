@@ -131,7 +131,7 @@ export default function TabCelula({
                   <Avatar
                     onClick={() => {
                       setOpenModal(true);
-                      setImagem(row.Image);
+                      setImagem(row.foto);
                     }}
                     src=""
                     alt="User"
