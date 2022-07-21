@@ -7,7 +7,7 @@ import List from '@mui/material/List';
 import ListItem from '@mui/material/ListItem';
 import Modal from '@mui/material/Modal';
 import Image from 'next/image';
-
+import corIgreja from 'src/utils/coresIgreja';
 import ListItemText from '@mui/material/ListItemText';
 import ListItemAvatar from '@mui/material/ListItemAvatar';
 //--------------------------------------------------------------------------
@@ -227,24 +227,28 @@ export default function TabCelula({
         aria-labelledby="modal-modal-title"
         aria-describedby="modal-modal-description"
       >
-        <Box display="block" flexDirection="column" width="auto" height="100vh">
-          <Box>
-            <Image
-              src={imagem || '/images/perfil.png'}
-              layout="fill"
-              objectFit="contain"
-              loading="eager"
-              placeholder="blur"
-              blurDataURL={bannerBlurHash}
+        <Box
+          bgcolor={corIgreja.principal2}
+          display="block"
+          flexDirection="column"
+          width="auto"
+          height="100vh"
+        >
+          <Box sx={{ position: 'relative' }}>
+            <img
+              src={imagem || '/images/inserirFoto.jpg'}
+              width="100%"
+              alt="install"
             />
-            <Box>
-              <Box textAlign="center" mt="86vh">
+
+            <Box mt={5}>
+              <Box textAlign="center">
                 <Button
                   onClick={() => {
                     setOpenModal(false);
                   }}
                   style={{
-                    background: '#781008',
+                    background: corIgreja.principal,
                     color: 'white',
                     fontFamily: 'Fugaz One',
                   }}

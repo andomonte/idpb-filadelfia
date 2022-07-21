@@ -5,7 +5,7 @@ import { Box, Button } from '@material-ui/core';
 import Avatar from '@material-ui/core/Avatar';
 import List from '@mui/material/List';
 import ListItem from '@mui/material/ListItem';
-
+import corIgreja from 'src/utils/coresIgreja';
 import ListItemText from '@mui/material/ListItemText';
 import ListItemAvatar from '@mui/material/ListItemAvatar';
 import Modal from '@mui/material/Modal';
@@ -105,7 +105,7 @@ else nomeLider = nomes;
                     <Avatar
                       onClick={() => {
                         setOpenModal(true);
-                        setImagem(row.Image);
+                        setImagem(row.foto);
                       }}
                       src=""
                       alt="User"
@@ -201,24 +201,28 @@ else nomeLider = nomes;
         aria-labelledby="modal-modal-title"
         aria-describedby="modal-modal-description"
       >
-        <Box display="block" flexDirection="column" width="auto" height="100vh">
-          <Box>
-            <Image
+        <Box
+          bgcolor={corIgreja.principal2}
+          display="block"
+          flexDirection="column"
+          width="auto"
+          height="100vh"
+        >
+          <Box sx={{ position: 'relative' }}>
+            <img
               src={imagem || '/images/inserirFoto.jpg'}
-              layout="fill"
-              objectFit="contain"
-              loading="eager"
-              placeholder="blur"
-              blurDataURL={bannerBlurHash}
+              width="100%"
+              alt="install"
             />
-            <Box>
-              <Box textAlign="center" mt="86vh">
+
+            <Box mt={5}>
+              <Box textAlign="center">
                 <Button
                   onClick={() => {
                     setOpenModal(false);
                   }}
                   style={{
-                    background: '#781008',
+                    background: corIgreja.principal,
                     color: 'white',
                     fontFamily: 'Fugaz One',
                   }}
